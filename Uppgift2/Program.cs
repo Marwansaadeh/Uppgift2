@@ -18,42 +18,61 @@ namespace Uppgift2
 
             };
 
-            Product x = new Product();
-            x.ProductId = 1;
-            x.ProductName = "Marwan";
-            x.Price = 5;
-            x.ProductCount = 5;
            
-
-            R.ProductReceipt = products;
-            R.AddToList(x);
-
-            Product Y = new Product();
-            Y.ProductId = 1;
-            Y.ProductName = "Marwan";
-            Y.Price = 5;
-            Y.ProductCount = 5;
+            
 
 
-            R.ProductReceipt = products;
-            R.AddToList(Y);
 
             
 
-            Product c = new Product();
-            c.ProductId = 1;
-            c.ProductName = "Marwan";
-            c.Price = 5;
-            c.ProductCount = 1;
-            R.ReturnProduct(c);
-
+            
             Product y = new Product();
             y.ProductId = 2;
             y.ProductName = "Tarek";
             y.Price = 5;
-            y.ProductCount = 8;
+            y.Max = 5;
+            y.ProductCount = 3;
             R.ProductReceipt = products;
-            R.AddToList(y);
+
+            R.AddTest(y);
+
+            Product m = new Product();
+            m.ProductId = 2;
+            m.ProductName = "Tarek";
+            m.Price = 5;
+            m.Max = 5;
+            m.ProductCount = 2;
+            R.ProductReceipt = products;
+            R.AddTest(m);
+            R.ReturnProduct(m);
+
+            Product x = new Product();
+            x.ProductId = 1;
+            x.ProductName = "Marwan";
+            x.Price = 5;
+            x.ProductCount = 1;
+            x.Max = 2;
+            R.ProductReceipt = products;
+            R.AddTest(x);
+
+            Product xx = new Product();
+            xx.ProductId = 4;
+            xx.ProductName = "Marwan";
+            xx.Price = 5;
+            xx.ProductCount = 1;
+            xx.Max = 6;
+            R.ProductReceipt = products;
+            R.AddTest(xx);
+
+            Product gg = new Product();
+            gg.ProductId = 4;
+            gg.ProductName = "Marwan";
+            gg.Price = 5;
+            gg.ProductCount = 3;
+            gg.Max = 6;
+            R.ProductReceipt = products;
+            R.AddTest(gg);
+
 
             //R.CurrentProducts();
             //R.ProductReceipt = products;

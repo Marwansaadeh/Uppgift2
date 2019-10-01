@@ -24,6 +24,7 @@ namespace Uppgift2
 
         public decimal ProductTotalCost { get; private set; }
 
+        public decimal Max { get; set; }
         public decimal ProductCount { get; set; }
 
         public enum PriceType
@@ -48,6 +49,18 @@ namespace Uppgift2
         public void SetProductTotalCost()
         {
             this.ProductTotalCost = this.ProductCount * this.Price;
+        }
+        public decimal IsLessThanMax()
+        {
+            if ( this.ProductCount<=Max)
+            {
+                this.ProductCount += 0;
+                return this.ProductCount;
+            }
+               
+            
+            else
+                return 0;
         }
 
     }

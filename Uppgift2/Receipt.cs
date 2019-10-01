@@ -74,29 +74,29 @@ namespace Uppgift2
             else return false;
         }
 
-       public void AddToList(Product G)
-        {
-             
-            if (ProductReceipt==null)
-            {
-                
-                ProductReceipt.Add(G);
-            }
-            else if(IsProductExsist(G))
-            {
-                foreach (var item in ProductReceipt)
-                {
-                    if(item.ProductId== G.ProductId)
-                    {
-                       item.ProductCount += G.ProductCount;
-                    }
-                   
-                }
-            }
-            else { ProductReceipt.Add(G); }
-           
+        //public void AddToList(Product G)
+        //{
 
-        }
+        //    if (ProductReceipt == null)
+        //    {
+
+        //        ProductReceipt.Add(G);
+        //    }
+        //    else if (IsProductExsist(G))
+        //    {
+        //        foreach (var item in ProductReceipt)
+        //        {
+        //            if (item.ProductId == G.ProductId)
+        //            {
+        //                item.ProductCount += G.ProductCount;
+        //            }
+
+        //        }
+        //    }
+        //    else { ProductReceipt.Add(G); }
+
+          
+        //}
 
         public void ReturnProduct(Product G)
         {
@@ -128,9 +128,34 @@ namespace Uppgift2
 
 
         }
+      public void AddTest(Product G)
+        {
+             if (IsProductExsist(G) &&G.IsLessThanMax()!=0)
+            {
+                foreach (var item in ProductReceipt)
+                {
+                    if (item.ProductId == G.ProductId)
+                    {
+                        decimal value = item.ProductCount += G.ProductCount;
+                        if (value<G.Max)
+                        {
+                            item.ProductCount = value;
+                        }
+                        else
+                        {
+                            item.ProductCount = value-G.ProductCount;
+                        }
+                    }
 
+                }
+            }
 
-
+            else if(G.IsLessThanMax() != 0 && !IsProductExsist(G))
+            {
+                ProductReceipt.Add(G);
+            }
+            
+        }
 
     }
 }
