@@ -16,7 +16,8 @@ namespace Uppgift2
         public decimal TotalPayment { get; private set; }
 
         public void SetTotalPayment()
-        {         
+        {
+            TotalPayment = 0;
             foreach (var item in ProductReceipt)
             {
                 TotalPayment += item.ProductTotalCost;
@@ -42,7 +43,18 @@ namespace Uppgift2
             }
 
         }
+        //public decimal GetTotal()
+        //{
+        //    decimal result = 0;
 
+        //    foreach (var item in ProductReceipt)
+        //    {
+        //        result += item.ProductTotalCost;
+
+
+        //    }
+        //    return result;
+        //}
         public string ShowPaymentDetails()
         {
             StringBuilder details = new StringBuilder();
@@ -53,6 +65,9 @@ namespace Uppgift2
                 details.Append($"{item.ProductName} * {item.ProductCount} = {item.ProductTotalCost}\n");
                
             }
+            SetTotalPayment();
+
+            details.Append($"Totalitem: {this.TotalPayment.ToString()}");
 
             if (Rabbat() != null)
             {
@@ -60,10 +75,8 @@ namespace Uppgift2
                 if (this.TotalPayment > 1000 && this.TotalPayment <= 2000) { details.Append($"\nTotal:{this.TotalPayment + Rabbat()}").ToString(); }
                 else if (this.TotalPayment > 2000) { details.Append($"\nTotal:{this.TotalPayment + Rabbat()}").ToString(); }
             }
-            SetTotalPayment();
-            details.Append($"Total: {this.TotalPayment.ToString()}");
 
-            return $"Kvitto {this.date}\nkivttonumber:{KvittoNumber}\n{details}\n";
+            return $"Kvitto {this.date}\nkivttonumber:{KvittoNumber}\n{details}";
 
         }
 
@@ -98,7 +111,7 @@ namespace Uppgift2
           
         //}
 
-        public void ReturnProduct(Product G)
+      public void ReturnProduct(Product G)
         {
 
             
@@ -137,7 +150,7 @@ namespace Uppgift2
                     if (item.ProductId == G.ProductId)
                     {
                         decimal value = item.ProductCount += G.ProductCount;
-                        if (value<G.Max)
+                        if (value<=G.Max)
                         {
                             item.ProductCount = value;
                         }
@@ -150,12 +163,27 @@ namespace Uppgift2
                 }
             }
 
-            else if(G.IsLessThanMax() != 0 && !IsProductExsist(G))
+            else if (G.IsLessThanMax() != 0 && !IsProductExsist(G))
             {
                 ProductReceipt.Add(G);
             }
-            
+
         }
 
+        public void SetKvittoNumber()
+        {
+            if (GenerateReceiptNumber.CreateFirstNumber() == true)
+            {
+                this.KvittoNumber = 1;
+            }
+            else
+            {
+                this.KvittoNumber = GenerateReceiptNumber.GetMaxReceiptNumber() + 1;
+            }
+        }
+        
+
+
+
     }
-}
+    }

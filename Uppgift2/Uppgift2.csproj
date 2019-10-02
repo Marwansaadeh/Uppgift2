@@ -43,6 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddProducts.cs" />
+    <Compile Include="AddProductsVoid.cs" />
+    <Compile Include="BuyVoid.cs" />
+    <Compile Include="CheckInputNumbers.cs" />
+    <Compile Include="EditProductsVoid.cs" />
+    <Compile Include="EditProduct.cs" />
+    <Compile Include="FileManager.cs" />
+    <Compile Include="GenerateReceiptNumber.cs" />
+    <Compile Include="MainMenu.cs" />
     <Compile Include="Product.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ProductFile\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

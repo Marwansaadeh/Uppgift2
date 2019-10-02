@@ -1,0 +1,26 @@
+Kvitto 2/10/2019 4:43:06 PM
+kivttonumber:1
+Kaffe * 4 = 2000
+Snus * 5 = 200
+Totalitem: 2200
+Rabbat:-440.0
+Total:1760.0
+Kvitto 2/10/2019 6:05:25 PM
+kivttonumber:2
+Kaffe * 2 = 1000
+Totalitem: 1000
+Kvitto 2/10/2019 6:43:18 PM
+kivttonumber:3
+Kaffe * 2 = 1000
+Totalitem: 1000
+Kvitto 2/10/2019 7:01:31 PM
+kivttonumber:4
+Kaffe * 2 = 1000
+Totalitem: 1000
+Kvitto 2/10/2019 9:12:36 PM
+kivttonumber:5
+Kaffe * 3 = 1500
+Snus * 4 = 160
+Totalitem: 1660
+Rabbat:-166.0
+Total:1494.0
